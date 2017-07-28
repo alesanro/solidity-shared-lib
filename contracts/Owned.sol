@@ -7,15 +7,23 @@ pragma solidity ^0.4.8;
  * didn't happen yet.
  */
 contract Owned {
+    /**
+     * Contract owner address
+     */
     address public contractOwner;
-    address public pendingContractOwner;
 
-    uint constant OK = 1;
+    /**
+     * Contract owner address
+     */
+    address public pendingContractOwner;
 
     function Owned() {
         contractOwner = msg.sender;
     }
 
+    /**
+    * @dev Owner check modifier
+    */
     modifier onlyContractOwner() {
         if (contractOwner == msg.sender) {
             _;
@@ -27,11 +35,15 @@ contract Owned {
      *
      * Can only be called by current owner.
      *
-     * @param _to address of the next owner.
+     * @param _to address of the next owner. 0x0 is not allowed.
      *
      * @return success.
      */
     function changeContractOwnership(address _to) onlyContractOwner() returns(bool) {
+        if (_to  == 0x0) {
+            return false;
+        }
+
         pendingContractOwner = _to;
         return true;
     }
@@ -47,8 +59,10 @@ contract Owned {
         if (pendingContractOwner != msg.sender) {
             return false;
         }
+
         contractOwner = pendingContractOwner;
         delete pendingContractOwner;
+
         return true;
     }
 }

@@ -1,4 +1,4 @@
-const Owned = artifacts.require("./Owned.sol")
+const Owned = artifacts.require("Owned")
 
 contract("Owned", function (accounts) {
     const owner1 = accounts[0]
