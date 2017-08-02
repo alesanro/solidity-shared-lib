@@ -31,6 +31,14 @@ contract Owned {
     }
 
     /**
+     * @dev Destroy contract and scrub a data
+     * @notice Only owner can call it
+     */
+    function destroy() onlyContractOwner {
+        suicide(msg.sender);
+    }
+
+    /**
      * Prepares ownership pass.
      *
      * Can only be called by current owner.
