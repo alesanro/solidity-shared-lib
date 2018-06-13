@@ -2,9 +2,7 @@
   "package-name": "solidity-shared-lib",
   "version": "0.2.0",
   "description": "Specifies contracts shared between libraries",
-  "authors": [
-    "Mike Fluff <mf@mikefluff.com> (http://mikefluff.com)"
-  ],
+  "author": "LaborX PTY",
   "keywords": [
     "solidity",
     "ethereum",
@@ -12,5 +10,5 @@
   ],
   "dependencies": {
   },
-  "license": "GPL-3.0"
+  "license": "AGPL-3.0"
 }
