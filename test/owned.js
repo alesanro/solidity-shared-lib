@@ -8,7 +8,7 @@ contract("Owned", function (accounts) {
     let owned
 
     before("setup", function(done) {
-        Owned.deployed()
+        Owned.new()
         .then((result) => owned = result)
         .then(() => done())
         .catch((e) => done(e))
