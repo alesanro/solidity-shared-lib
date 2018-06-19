@@ -1,4 +1,4 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.4.21;
 
 // Provided by Truffle.
 contract Migrations {
@@ -9,7 +9,7 @@ contract Migrations {
         if (msg.sender == owner) _;
     }
 
-    constructor() public {
+    function Migrations() public {
         owner = msg.sender;
     }
 

@@ -4,17 +4,17 @@
   "description": "Specifies contracts shared between libraries",
   "main": "truffle.js",
   "scripts": {
-    "test:all": "./node_modules/truffle/build/cli.bundled.js test --network test",
-    "run:rpc": "./node_modules/ganache-cli/build/cli.node.js -g 1 --gasLimit 4700000 --trace_request true | grep -Ev \"FilterSubprovider|eth_getFilterChanges\"",
-    "compile": "./node_modules/truffle/build/cli.bundled.js compile",
-    "compile:all": "./node_modules/truffle/build/cli.bundled.js compile --all",
-    "migrate": "./node_modules/truffle/build/cli.bundled.js migrate",
-    "migrate:reset": "./node_modules/truffle/build/cli.bundled.js migrate --reset",
-    "console": "./node_modules/truffle/build/cli.bundled.js console --network test"
+    "test:all": "npx truffle test --network test",
+    "run:rpc": "npx ganache-cli -g 1 --gasLimit 4700000 --trace_request true | grep -Ev \"FilterSubprovider|eth_getFilterChanges\"",
+    "compile": "npx truffle compile",
+    "compile:all": "npx truffle compile --all",
+    "migrate": "npx truffle migrate",
+    "migrate:reset": "npx truffle migrate --reset",
+    "console": "npx truffle console --network test"
   },
   "devDependencies": {
-    "ganache-cli": "^6.1.4",
-    "truffle": "^4.1.13"
+    "ganache-cli": "6.1.0",
+    "truffle": "4.1.5"
   },
   "repository": {
     "type": "git",
